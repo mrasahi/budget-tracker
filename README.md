@@ -2,7 +2,8 @@
 
 Homework18 - Makoto Asahi
 
-Deployed Link:
+Deployed Link: 
+https://secret-dusk-61641.herokuapp.com/
 
 # Description
 
@@ -32,3 +33,9 @@ Changes to the code include:
 - Added `db.js` file
 
 - Path added in `index.html` for the newly added files
+
+
+
+<img src="./preview/preview1.jpg" width = "100%">
+
+<img src="./preview/preview2.jpg" width = "100%">
