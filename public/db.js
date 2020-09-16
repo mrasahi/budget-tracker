@@ -2,7 +2,6 @@ let db
 // opens budget db connection v1
 const request = indexedDB.open('budget', 1)
 
-// for 
 request.onupgradeneeded = event => {
   db = event.target.result
   db.createObjectStore('pending', { autoIncrement: true })
