@@ -1,5 +1,4 @@
 let db
-// opens budget db connection v1
 const request = indexedDB.open('budget', 1)
 
 request.onupgradeneeded = event => {
@@ -9,7 +8,6 @@ request.onupgradeneeded = event => {
 
 request.onsuccess = event => {
   db = event.target.result
-    // Runs checkDatabase function once connection restored
   if (navigator.onLine) {
     checkDatabase()
   }
@@ -19,7 +17,7 @@ request.onerror = event => {
   console.log(event.target.errorCode)
 }
 
-const saveItem = item => {
+const saveRecord = item => {
   const transaction = db.transaction(['pending'], 'readwrite')
   const store = transaction.objectStore('pending')
   store.add(item)
@@ -33,11 +31,10 @@ const checkDatabase = () => {
 
   getAll.onsuccess = () => {
     if (getAll.result.length > 0) {
-      fetch('/api/items/bulk', {
+      fetch('/api/transaction/bulk', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('user')}`
         },
         body: JSON.stringify(getAll.result)
       })

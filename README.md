@@ -32,6 +32,8 @@ Changes to the code include:
 
 - Added `db.js` file
 
+- Added `service-worker.js` file
+
 - Path added in `index.html` for the newly added files
 
 
